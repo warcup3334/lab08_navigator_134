@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:lab08_project_134/pages/secondpage.dart';
+
+class FirstPage extends StatefulWidget {
+  const FirstPage({super.key});
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("1st Page"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text("This is 1st Page."),
+          ElevatedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondPage()));
+            },
+             child: const Text("Go To Next Page."),
+             ),
+             
+        ],
+      ),
+    );
+  }
+}
